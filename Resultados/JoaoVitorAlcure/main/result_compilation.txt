@@ -1,2 +1,15 @@
-cc1: fatal error: *.c: No such file or directory
-compilation terminated.
+acao_ouro.c: In function ‘leOuro’:
+acao_ouro.c:26:5: warning: implicit declaration of function ‘scanf’ [-Wimplicit-function-declaration]
+   26 |     scanf("%d\n", &quantidade);
+      |     ^~~~~
+acao_ouro.c:3:1: note: include ‘<stdio.h>’ or provide a declaration of ‘scanf’
+    2 | #include <stdlib.h>
+  +++ |+#include <stdio.h>
+    3 | 
+acao_ouro.c:26:5: warning: incompatible implicit declaration of built-in function ‘scanf’ [-Wbuiltin-declaration-mismatch]
+   26 |     scanf("%d\n", &quantidade);
+      |     ^~~~~
+acao_ouro.c:26:5: note: include ‘<stdio.h>’ or provide a declaration of ‘scanf’
+dado.c:9:1: warning: return type defaults to ‘int’ [-Wimplicit-int]
+    9 | RolaDado(){
+      | ^~~~~~~~

@@ -1,0 +1,15 @@
+==803140== Memcheck, a memory error detector
+==803140== Copyright (C) 2002-2022, and GNU GPL'd, by Julian Seward et al.
+==803140== Using Valgrind-3.22.0 and LibVEX; rerun with -h for copyright info
+==803140== Command: Resultados/JoaoVitorAlcure/completo/prog Resultados/JoaoVitorAlcure/completo/Casos/6
+==803140== Parent PID: 803139
+==803140== 
+==803140== 
+==803140== HEAP SUMMARY:
+==803140==     in use at exit: 0 bytes in 0 blocks
+==803140==   total heap usage: 0 allocs, 0 frees, 0 bytes allocated
+==803140== 
+==803140== All heap blocks were freed -- no leaks are possible
+==803140== 
+==803140== For lists of detected and suppressed errors, rerun with: -s
+==803140== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
