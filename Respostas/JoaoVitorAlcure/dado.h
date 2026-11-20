@@ -2,9 +2,9 @@
 #define _DADO_H
 
 /**
- * @brief Converte o dado genérico para ouro e adiciona a quantidade para  o jogador.
- * @param dado Ponteiro genérico para o ouro
- * @param j Jogador que parou na célula
+ * @brief Rola o dado.
+ * @param dado Ponteiro genérico para o dado
+ * @return Valor de 1 a 4 que será avançado no mapa
  */
 int RolaDado();
 

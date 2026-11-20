@@ -1,5 +1,7 @@
 #include "acao_avanca.h"
 #include <stdlib.h>
+#include <stdio.h>
+
 
 struct Avanca{
     int quantidade;
@@ -13,6 +15,7 @@ struct Avanca{
 Avanca *criaAvanca(int quantidade){
     Avanca* avanca = malloc(sizeof(struct Avanca));
     avanca->quantidade = quantidade;
+    return avanca;
 }
 
 /**
@@ -31,9 +34,14 @@ Avanca *leAvanca(){
  * @param dado Ponteiro genérico para o Avanca
  * @param j Jogador que parou na célula
  */
-void executaAvanca(void *dado, Jogador *j){
+void executaAvanca(Mapa *m, void *dado, Jogador *j){
     Avanca* avanca = (Avanca*)dado;
-    
+    int diferencaProFim=obtemPosicaoFimMapa(m) - (obtemPosicaoJogador(j)+avanca->quantidade);
+    if (diferencaProFim >= 0){
+        moveJogadorMapa(m, j, obtemPosicaoJogador(j)+avanca->quantidade);
+    } else {
+        moveJogadorMapa(m, j, obtemPosicaoFimMapa(m));
+    }
 }
 
 /**
@@ -41,10 +49,16 @@ void executaAvanca(void *dado, Jogador *j){
  * "AVANCA <quantidade>". Ex: "AVANCA 2"
  * @param dado Ponteiro genérico para o Avanca
  */
-void imprimeAvanca(void *dado);
+void imprimeAvanca(void *dado){
+    Avanca* avanca = (Avanca*)dado;
+    printf("AVANCA %d", avanca->quantidade);
+}
 
 /**
  * @brief Converte o dado genérico para Avanca e libera a memória alocada para ele
  * @param dado Ponteiro genérico para o Avanca
  */
-void desalocaAvanca(void *dado);
+void desalocaAvanca(void *dado){
+    Avanca* avanca = (Avanca*)dado;
+    free(avanca);
+}
