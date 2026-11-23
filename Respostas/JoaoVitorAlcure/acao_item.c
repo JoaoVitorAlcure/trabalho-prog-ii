@@ -1,5 +1,7 @@
 #include "acao_item.h"
 #include <stdlib.h>
+#include <stdio.h>
+#include <string.h>
 
 struct Item{
     char nome[MAX_TAM_NOME_ITEM];
@@ -29,7 +31,7 @@ Item *criaItem(char *nome, int preco, int bonus){
 Item *leItem(){
     char nome[MAX_TAM_NOME_ITEM];
     int preco, bonus;
-    scanf("%s %d %d\n", nome, &preco, &bonus);
+    scanf("%20s %d %d", nome, &preco, &bonus);
     return criaItem(nome, preco, bonus);
 }
 
@@ -39,12 +41,13 @@ Item *leItem(){
  * @param dado Ponteiro genérico para o Item
  * @param j Jogador que parou na célula
  */
-void executaItem(void *dado, Jogador *j){
+int executaItem(void *dado, Jogador *j){
     Item* item = (Item*)dado;
     if (obtemOuroJogador(j) >= item->preco){
         adicionaOuroJogador(j, (item->preco*-1));
         adicionaForcaJogador(j, item->bonus);
     }
+    return 0;
 }
 
 /**
@@ -54,7 +57,12 @@ void executaItem(void *dado, Jogador *j){
  */
 void imprimeItem(void *dado){
     Item* item = (Item*)dado;
-    printf("ITEM %s (P:%d F:%d)", item->nome, item->preco, item->bonus);
+    if (item->bonus > 0){
+        printf("ITEM %s (P:%d F:+%d)", item->nome, item->preco, item->bonus);
+    } else {
+        printf("ITEM %s (P:%d F:-%d)", item->nome, item->preco, item->bonus);
+    }
+    
 }
 
 /**

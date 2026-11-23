@@ -61,7 +61,7 @@ int obtemPosicaoFimMapa(Mapa *m){
  * @return Célula da casa ou NULL se a posição for o Início, o Fim ou inválida
  */
 Celula *obtemCelulaMapa(Mapa *m, int posicao){
-    if (posicao-1 >= 0 && posicao-1 <= m->qtdCelulas){
+    if (posicao >= 1 && posicao <= m->qtdCelulas){
         return m->celulas[posicao-1];
     }
     return NULL;

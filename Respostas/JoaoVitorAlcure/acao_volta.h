@@ -2,7 +2,6 @@
 #define _ACAO_VOLTA_H
 
 #include "jogador.h"
-#include "mapa.h"
 
 typedef struct Volta Volta;
 
@@ -25,7 +24,7 @@ Volta *leVolta();
  * @param dado Ponteiro genérico para o Volta
  * @param j Jogador que parou na célula
  */
-void executaVolta(Mapa *m, void *dado, Jogador *j);
+int executaVolta(void *dado, Jogador *j);
 
 /**
  * @brief Converte o dado genérico para Volta e imprime, sem quebra de linha:

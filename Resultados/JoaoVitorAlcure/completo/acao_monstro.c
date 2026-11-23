@@ -32,7 +32,7 @@ Monstro *criaMonstro(char *nome, int forca, int xp){
 Monstro *leMonstro(){
     char nome[MAX_TAM_NOME_MONSTRO];
     int forca, xp;
-    scanf("%s %d %d", nome, &forca, &xp);
+    scanf("%20s %d %d", nome, &forca, &xp);
     return criaMonstro(nome, forca, xp);
 }
 

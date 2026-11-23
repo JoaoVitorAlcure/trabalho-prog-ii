@@ -98,9 +98,9 @@ int comparaOrdJogador(const void *d1, const void *d2){
         return -1;
     } else if (obtemXPJogador(jogador1) < obtemXPJogador(jogador2)){
         return 1;
-    } else if (strcmp(obtemNomeJogador(jogador1),obtemNomeJogador(jogador2)) == -1){
+    } else if (strcmp(obtemNomeJogador(jogador1),obtemNomeJogador(jogador2)) < 0){
         return -1;
-    } else if (strcmp(obtemNomeJogador(jogador1),obtemNomeJogador(jogador2)) == 1){
+    } else if (strcmp(obtemNomeJogador(jogador1),obtemNomeJogador(jogador2)) > 0){
         return 1;
     } else {
         return 0;

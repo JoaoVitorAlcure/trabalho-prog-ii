@@ -1,5 +1,7 @@
 #include "acao_ouro.h"
 #include <stdlib.h>
+#include <stdio.h>
+
 
 struct Ouro{
     int quantidade;
@@ -23,7 +25,7 @@ Ouro *criaOuro(int quantidade){
  */
 Ouro *leOuro(){
     int quantidade;
-    scanf("%d\n", &quantidade);
+    scanf("%d", &quantidade);
     return criaOuro(quantidade);
 }
 
@@ -32,7 +34,27 @@ Ouro *leOuro(){
  * @param dado Ponteiro genérico para o ouro
  * @param j Jogador que parou na célula
  */
-void executaOuro(void *dado, Jogador *j){
+int executaOuro(void *dado, Jogador *j){
     Ouro* ouro = (Ouro*)dado;
     adicionaOuroJogador(j, ouro->quantidade);
+    return 0;
+}
+
+/**
+ * @brief Converte o dado genérico para ouro e imprime, sem quebra de linha:
+ * "OURO <quantidade>". Ex: "OURO 10"
+ * @param dado Ponteiro genérico para o ouro
+ */
+void imprimeOuro(void *dado){
+    Ouro* ouro = (Ouro*)dado;
+    printf("OURO %d", ouro->quantidade);
+}
+
+/**
+ * @brief Converte o dado genérico para ouro e libera a memória alocada para ele
+ * @param dado Ponteiro genérico para o ouro
+ */
+void desalocaOuro(void *dado){
+    Ouro* ouro = (Ouro*)dado;
+    free(ouro);
 }

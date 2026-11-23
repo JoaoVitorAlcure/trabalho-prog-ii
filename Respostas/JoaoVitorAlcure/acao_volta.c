@@ -25,7 +25,7 @@ Volta *criaVolta(int quantidade){
  */
 Volta *leVolta(){
     int quantidade;
-    scanf(" %d\n", &quantidade);
+    scanf(" %d", &quantidade);
     return criaVolta(quantidade);
 }
 
@@ -34,14 +34,9 @@ Volta *leVolta(){
  * @param dado Ponteiro genérico para o Volta
  * @param j Jogador que parou na célula
  */
-void executaVolta(Mapa *m, void *dado, Jogador *j){
+int executaVolta(void *dado, Jogador *j){
     Volta* volta = (Volta*)dado;
-    int destino=obtemPosicaoJogador(j)-volta->quantidade;
-    if (destino >= 0){
-        moveJogadorMapa(m, j, obtemPosicaoJogador(j)-volta->quantidade);
-    } else {
-        moveJogadorMapa(m, j, 0);
-    }
+    return volta->quantidade*-1;
 }
 
 /**

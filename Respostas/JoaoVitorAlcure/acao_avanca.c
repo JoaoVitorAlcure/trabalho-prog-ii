@@ -25,7 +25,7 @@ Avanca *criaAvanca(int quantidade){
  */
 Avanca *leAvanca(){
     int quantidade;
-    scanf(" %d\n", &quantidade);
+    scanf(" %d", &quantidade);
     return criaAvanca(quantidade);
 }
 
@@ -34,14 +34,9 @@ Avanca *leAvanca(){
  * @param dado Ponteiro genérico para o Avanca
  * @param j Jogador que parou na célula
  */
-void executaAvanca(Mapa *m, void *dado, Jogador *j){
+int executaAvanca(void *dado, Jogador *j){
     Avanca* avanca = (Avanca*)dado;
-    int diferencaProFim=obtemPosicaoFimMapa(m) - (obtemPosicaoJogador(j)+avanca->quantidade);
-    if (diferencaProFim >= 0){
-        moveJogadorMapa(m, j, obtemPosicaoJogador(j)+avanca->quantidade);
-    } else {
-        moveJogadorMapa(m, j, obtemPosicaoFimMapa(m));
-    }
+    return avanca->quantidade;
 }
 
 /**

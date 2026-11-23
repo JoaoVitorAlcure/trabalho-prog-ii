@@ -2,7 +2,6 @@
 #define _ACAO_AVANCA_H
 
 #include "jogador.h"
-#include "mapa.h"
 
 typedef struct Avanca Avanca;
 
@@ -25,7 +24,7 @@ Avanca *leAvanca();
  * @param dado Ponteiro genérico para o Avanca
  * @param j Jogador que parou na célula
  */
-void executaAvanca(Mapa *m, void *dado, Jogador *j);
+int executaAvanca(void *dado, Jogador *j);
 
 /**
  * @brief Converte o dado genérico para Avanca e imprime, sem quebra de linha:

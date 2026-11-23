@@ -24,6 +24,19 @@ Ouro *leOuro();
  * @param dado Ponteiro genérico para o ouro
  * @param j Jogador que parou na célula
  */
-void executaOuro(void *dado, Jogador *j);
+int executaOuro(void *dado, Jogador *j);
+
+/**
+ * @brief Converte o dado genérico para ouro e imprime, sem quebra de linha:
+ * "OURO <quantidade>". Ex: "OURO 10"
+ * @param dado Ponteiro genérico para o ouro
+ */
+void imprimeOuro(void *dado);
+
+/**
+ * @brief Converte o dado genérico para ouro e libera a memória alocada para ele
+ * @param dado Ponteiro genérico para o ouro
+ */
+void desalocaOuro(void *dado);
 
 #endif // _ACAO_OURO_H
