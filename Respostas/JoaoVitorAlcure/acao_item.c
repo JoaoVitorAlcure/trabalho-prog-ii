@@ -57,12 +57,7 @@ int executaItem(void *dado, Jogador *j){
  */
 void imprimeItem(void *dado){
     Item* item = (Item*)dado;
-    if (item->bonus > 0){
-        printf("ITEM %s (P:%d F:+%d)", item->nome, item->preco, item->bonus);
-    } else {
-        printf("ITEM %s (P:%d F:-%d)", item->nome, item->preco, item->bonus);
-    }
-    
+    printf("ITEM %s (P:%d F:+%d)", item->nome, item->preco, item->bonus);
 }
 
 /**

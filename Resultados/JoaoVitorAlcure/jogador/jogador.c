@@ -122,7 +122,7 @@ int venceDisputaJogador(Jogador *desafiante, Jogador *ocupante){
         return 0;
     } else if (obtemXPJogador(desafiante) > obtemXPJogador(ocupante)){
         return 1;
-    } else if (obtemXPJogador(desafiante) <= obtemXPJogador(ocupante)){
+    } else {
         return 0;
     }
 }
